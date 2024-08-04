@@ -1,0 +1,133 @@
+<div class="container-homepage">
+  <div class="table-price-car">
+    <div class="title-car">
+      <h2> Bảng Giá xe tháng {{5}}</h2>
+      <select class="col-select" >
+        <option value="">Tên thương hiệu oto</option>
+        <option *ngFor="let trademark of listTrademark" >
+          {{trademark.name}}
+        </option>
+      </select>
+    </div>
+
+    <div class="group-table-trademark">
+      <div class="table-trademarks">
+        <table>
+          <thead>
+            <tr>
+              <th>Hãng xe</th>
+              <th>Dòng xe</th>
+              <th>Phiên bản</th>
+              <th>Phân khúc xe</th>
+              <th>Giá niêm yết</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of listCarMonth; let i = index">
+              <td>
+                <a [href]="data.linkAutomaker">{{data.nameMaker}}</a>
+              </td>
+              <td>
+                <a [href]="data.linkVehicle">{{data.nameVehicles}}</a>
+              </td>
+              <td> {{data.version}}</td>
+              <td> {{data.vehicleSegment}}</td>
+              <td>{{data.listedPrice}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-trademarks-banner">
+        <table>
+          <thead>
+            <tr>
+              <th>Đàm phán</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="group-form-sell">
+                  <div class="control-input">
+                    <input type="text" placeholder="Họ và tên">
+                  </div>
+  
+                  <div class="control-input">
+                    <input type="text" placeholder="Họ và tên">
+                  </div>
+                  <div class="control-btn">
+                    <button>Nhận báo giá</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="featured-news">
+    <h2>Tin tức nổi bật</h2>
+    <div class="group-featured">
+      <a href="">Tin thị trường</a>
+      <a href="">Review</a>
+      <a href="">Chia sẻ - Tư vấn</a>
+      <a href="">Hỏi đáp</a>
+    </div>
+    <div class="group-posts">
+      <div class="content-posts-main">
+        <div class="title-post">
+          <p>{{posts[0]?.titlePost}}</p>
+        </div>
+        <div class="image-post">
+          <img [src]="posts[0]?.imagePost" alt="">
+        </div>
+        <div class="content-post">
+          <p>{{posts[0]?.contentPost}}</p>
+        </div>
+      </div>
+      <div class="content-posts-extra">
+        <div class="control-post-extra" *ngFor="let item of posts">
+          <div class="title-post">
+            <p>{{item.titlePost}}</p>
+          </div>
+          <div class="content-post">
+            <p>{{item.contentPost}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-car">
+    <h2>Tìm kiếm theo giá xe</h2>
+    <div class="group-input-search">
+      <span class="material-icons">
+        search
+      </span>
+      <input type="text" placeholder="Nhập tên xe cần tìm">
+      <button>Tìm kiếm xe</button>
+    </div>
+  </div>
+
+  <div class="show-room">
+    <h2>SHOWROOM nổi bật</h2>
+    <div class="group-showroom">
+      <div class="control-show-room" *ngFor="let item of showRoom">
+        <div class="image-show-room">
+          <img [src]="item.image" alt="">
+        </div>
+        <div class="information-show-room">
+          <p><span>Tên  : </span><span>{{item.name}}</span></p>
+          <p><span>Số điện thoại: </span><span>{{item.hotline}}</span></p>
+        </div>
+      </div>
+    </div>
+    <button class="show-all">
+      Xem tất cả
+    </button>
+  </div>
+
+</div>

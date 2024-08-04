@@ -1,0 +1,56 @@
+<div class="main-wrapper">
+  <div class="container-navbar">
+    <div class="navbar">
+      <div class="navbar-logo">
+        <!-- <mat-icon class="navbar-logo-icon"
+                  [svgIcon]="iconLogomenu"
+                  (click)="returnHomePage()"
+                  matPrefix></mat-icon> -->
+        <h2 (click)="returnHomePage()">DANAAUTO</h2>
+      </div>
+
+      <div class="navbar-menu">
+        <div class="header__menu">
+          <div class="header__menu--item"
+               (click)="activeMenuIdx(i)"
+               [ngClass]="{ active: activeMenu === i }"
+               *ngFor="let item of listMenu; index as i">
+            <p>
+              {{ item }}
+              <!-- <mat-icon svgIcon="caret-down-black"
+                        matPrefix></mat-icon> -->
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-icon-menu">
+        <img *ngIf="!checkLogin"
+             src="../../../../assets/icon-svg/icon-menu-mobile.svg"
+             (click)="displayLogin()"
+             alt="">
+        <img *ngIf="checkLogin"
+             src="../../../../assets/icon-svg/icon-close.svg"
+             (click)="displayLogin()"
+             alt="">
+      </div>
+
+    </div>
+  </div>
+  <div class="content-side-menu"
+       [ngClass]="{'show-login': checkLogin}">
+    <div class="show-navbar-menu">
+      <div class="header__menu">
+        <div class="header__menu--item"
+             [ngClass]="{ active: activeMenu === i }"
+             *ngFor="let item of listMenu; index as i">
+          <p (click)="activeMenuIdx(i)">
+            {{ item }}
+
+          </p>
+          <hr class="hr-line-menu">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
