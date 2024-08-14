@@ -2,9 +2,9 @@
   <div class="table-price-car">
     <div class="title-car">
       <h2> Bảng Giá xe tháng {{5}}</h2>
-      <select class="col-select" >
-        <option value="">Tên thương hiệu oto</option>
-        <option *ngFor="let trademark of listTrademark" >
+      <select class="col-select" [(ngModel)]="selectVersion" (ngModelChange)="OnChangeVersion(selectVersion)" >
+        <option selected value>Tên thương hiệu oto</option>
+        <option *ngFor="let trademark of listTrademark" [value]="trademark.brandId">
           {{trademark.name}}
         </option>
       </select>
@@ -25,14 +25,14 @@
           <tbody>
             <tr *ngFor="let data of listCarMonth; let i = index">
               <td>
-                <a [href]="data.linkAutomaker">{{data.nameMaker}}</a>
+                <a [href]="data.brandName">{{data.brandName}}</a>
               </td>
               <td>
-                <a [href]="data.linkVehicle">{{data.nameVehicles}}</a>
+                <a [href]="data.brandName">{{data.modelName}}</a>
               </td>
-              <td> {{data.version}}</td>
-              <td> {{data.vehicleSegment}}</td>
-              <td>{{data.listedPrice}}</td>
+              <td> {{data.versionName}}</td>
+              <td> {{data.segment}}</td>
+              <td>{{data.installmentPayment}}</td>
             </tr>
           </tbody>
         </table>
