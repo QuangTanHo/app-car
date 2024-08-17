@@ -5,6 +5,7 @@ import { HomepageComponent } from './homepage.component';
 import { HomepageRoutingModule } from './homepage-routing.module';
 import { LayoutModule } from 'src/app/layout/layout.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PaginationComponent } from "../../common/pagination/pagination.component";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ReactiveFormsModule,
     HomepageRoutingModule,
-    LayoutModule
-  ]
+    LayoutModule,
+    PaginationComponent
+]
 })
 export class HomepageModule { }

@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AngularMaterialModule } from '../common/angular-material.module';
+import { PaginationComponent } from '../common/pagination/pagination.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { AngularMaterialModule } from '../common/angular-material.module';
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
+    PaginationComponent
   ],
   exports: [
     FooterComponent,
