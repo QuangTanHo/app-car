@@ -117,15 +117,16 @@
     <div class="group-showroom">
       <div class="control-show-room" *ngFor="let item of showRoom">
         <div class="image-show-room">
-          <img [src]="item.image" alt="">
+          <img [src]="item.urlImage
+          " alt="">
         </div>
         <div class="information-show-room">
           <p><span>Tên  : </span><span>{{item.name}}</span></p>
-          <p><span>Số điện thoại: </span><span>{{item.hotline}}</span></p>
+          <p><span>Số điện thoại: </span><span>{{item.address}}</span></p>
         </div>
       </div>
     </div>
-    <button class="show-all">
+    <button class="show-all" *ngIf="!isLastPageShowRoom"  (click)="getShowRoomByOutstanding()">
       Xem tất cả
     </button>
   </div>
