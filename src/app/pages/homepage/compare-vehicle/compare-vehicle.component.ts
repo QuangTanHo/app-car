@@ -21,6 +21,7 @@ export class CompareVehicleComponent implements OnInit {
     carModelId2: null
   }
 
+
   dataCompare:any;
   constructor(
     private compareVehicleService: CompareVehicleService

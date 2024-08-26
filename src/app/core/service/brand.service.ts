@@ -10,7 +10,7 @@ export class BrandService {
 constructor( private httpClient :HttpClient ) { }
 
 public getAllBrand() {
-   return this.httpClient.get<any>(environment.apiBaseUrl.concat('auth/v1/brand/getAll'));
+   return this.httpClient.get<any>(environment.apiBaseUrl.concat('un-auth/brand/getAll'));
 }
 
 }
