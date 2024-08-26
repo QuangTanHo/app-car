@@ -18,14 +18,14 @@ getShowRoomByBrandId(obj:any) {
   params = params.set('page',obj.page);
   params = params.set('size',Constants.SIZE_SHOWROOM);
 
-  return this.httpClient.get<any>(`${environment.apiBaseUrl}auth/v1/showroom/get-by-brandId`, { params });
+  return this.httpClient.get<any>(`${environment.apiBaseUrl}un-auth/showroom/get-by-brandId`, { params });
 }
 getShowRoomByOutstanding(page:number) {
   let params = new HttpParams();
   params = params.set('page',page);
   params = params.set('size',Constants.SIZE_SHOWROOM);
 
-  return this.httpClient.get<any>(`${environment.apiBaseUrl}auth/v1/showroom/get-by-outstanding`, { params });
+  return this.httpClient.get<any>(`${environment.apiBaseUrl}un-auth/showroom/get-by-outstanding`, { params });
 }
 
 }

@@ -15,7 +15,7 @@ getAllVersionByBrandId(brandId:any) {
     params = params.set('brandId', brandId.toString());
   }
 
-  return this.httpClient.get<any>(`${environment.apiBaseUrl}auth/v1/version/get-by-brandId`, { params });
+  return this.httpClient.get<any>(`${environment.apiBaseUrl}un-auth/version/get-by-brandId`, { params });
 }
 
 }

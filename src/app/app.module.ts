@@ -17,7 +17,6 @@ import localeVi from '@angular/common/locales/vi';
 import { PopupCreateAdviceVehiclesComponent } from './pages/vehicles/popup-create-advice-vehicles/popup-create-advice-vehicles.component';
 import { AngularMaterialModule } from './common/angular-material.module';
 import { VehicleDetailComponent } from './pages/vehicles/vehicle-detail/vehicle-detail.component';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 registerLocaleData(localeVi, 'vi-VN');
 @NgModule({
   declarations: [
@@ -35,7 +34,6 @@ registerLocaleData(localeVi, 'vi-VN');
     AppRoutingModule,
     LayoutModule,
     AngularMaterialModule,
-    CKEditorModule
   ],
   providers: [
     importProvidersFrom(
