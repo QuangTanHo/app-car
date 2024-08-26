@@ -1,0 +1,59 @@
+<div class="container-car-detail">
+  <div class="group-header-car">
+    <div class="header-left">
+      <div class="title-car">
+        <h1>{{carDetail.carDetail.carDetailName}}</h1>
+        <h2>{{carDetail.carDetail.priceRange}}</h2>
+      </div>
+      <div class="image-header">
+        <img [src]="carDetail.images[0].urlImage" alt="">
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="title-popup">
+        <h3>ĐĂNG KÝ TƯ VẤN</h3>
+      </div>
+      <div class="group-input-create">
+        <div class="control-input">
+          <input type="text"
+                 placeholder="Họ và tên">
+        </div>
+        <div class="control-input">
+          <input type="text"
+                 placeholder="Số điện thoại">
+        </div>
+        <div class="control-input">
+          <select>
+            <option value="">Chọn tỉnh thành</option>
+          </select>
+        </div>
+        <div class="control-input">
+          <select>
+            <option value="">Chọn dòng xe</option>
+          </select>
+        </div>
+    
+    
+        <button class="btn-send-advice">Gửi yêu cầu</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="vehicler-detail-hightlight">
+    <div class="title">ĐẶC ĐIỂM NỔI bật</div>
+
+    <div class="slider-container">
+      <ngx-slick-carousel class="carousel" [config]="slickCarouselConfig">
+        <div ngxSlickItem *ngFor="let image of carDetail.images">
+          <img [src]="image.urlImage" alt="Car Image">
+        </div>
+      </ngx-slick-carousel>
+    
+      <div class="thumbnail-container">
+        <div *ngFor="let image of carDetail.images; let i = index" class="thumbnail" (click)="slickModal.slickGoTo(i)">
+          <img [src]="image.urlImage" alt="Thumbnail">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

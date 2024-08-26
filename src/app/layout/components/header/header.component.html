@@ -6,21 +6,36 @@
                   [svgIcon]="iconLogomenu"
                   (click)="returnHomePage()"
                   matPrefix></mat-icon> -->
-        <h2 (click)="returnHomePage()">DANAAUTO</h2>
+        <h2 (click)="returnHomePage()">DANAAUTO11</h2>
       </div>
-
       <div class="navbar-menu">
         <div class="header__menu">
           <div class="header__menu--item"
                (click)="activeMenuIdx(i)"
                [ngClass]="{ active: activeMenu === i }"
+               (mouseenter)="onMouseEnter(i)"
+               (mouseleave)="onMouseLeave()"
                *ngFor="let item of listMenu; index as i">
             <p>
               {{ item }}
               <!-- <mat-icon svgIcon="caret-down-black"
                         matPrefix></mat-icon> -->
             </p>
+            <ul class="menu-main" *ngIf="activeMenu === 0 && i === 0">
+              <li *ngFor="let menu of listHeaderCar" class="menu-item">
+                <a href="{{ menu.url }}" class="menu-link">{{ menu.name }}</a>
+                <!-- Submenu for children cars -->
+                <ul class="submenu" *ngIf="menu.childrenCar.length > 0">
+                  <li *ngFor="let subMenu of menu.childrenCar">
+                    <a [href]="subMenu.url">{{ subMenu.name }}</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
+
+          
+          
         </div>
       </div>
       <div class="navbar-icon-menu">
@@ -45,8 +60,8 @@
              *ngFor="let item of listMenu; index as i">
           <p (click)="activeMenuIdx(i)">
             {{ item }}
-
           </p>
+          
           <hr class="hr-line-menu">
         </div>
       </div>

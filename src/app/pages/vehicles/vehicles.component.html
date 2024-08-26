@@ -1,0 +1,24 @@
+<div class="container-vehicles">
+  <div class="title-vehicles">
+    <h1>{{trademarkName}}</h1>
+  </div>
+
+  <div class="group-content-vehicles">
+    <div class="control-vehicle"
+         *ngFor="let item of listDataCar; index as i">
+      <div class="image-vehicle">
+        <img [src]="item.imageUrl"
+             alt="">
+      </div>
+      <p class="name-vehicle">{{item.carName}}</p>
+      <p class="vehicle-price">
+        {{item.price | number:'1.0-0' }} VNĐ
+      </p>
+      <div class="group-detail-car">
+        <button class="create-advise" (click)="showDialogCreateAdvise()">Đăng ký tư vấn</button>
+        <button class="detail-vehicle" (click)="routerCarDetail(item.href)">Chi tiết xe</button>
+      </div>
+    </div>
+
+  </div>
+</div>

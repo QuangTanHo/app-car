@@ -6,6 +6,7 @@ import { HomepageRoutingModule } from './homepage-routing.module';
 import { LayoutModule } from 'src/app/layout/layout.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PaginationComponent } from "../../common/pagination/pagination.component";
+import { AngularMaterialModule } from 'src/app/common/angular-material.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PaginationComponent } from "../../common/pagination/pagination.componen
     ReactiveFormsModule,
     HomepageRoutingModule,
     LayoutModule,
-    PaginationComponent
+    PaginationComponent,
+    AngularMaterialModule
 ]
 })
 export class HomepageModule { }

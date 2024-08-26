@@ -11,7 +11,7 @@ import { PaginationComponent } from '../common/pagination/pagination.component';
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     CommonModule,

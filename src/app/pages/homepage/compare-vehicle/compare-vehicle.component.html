@@ -1,3 +1,303 @@
-<p>
-  compare-vehicle works!
-</p>
+<div class="container-compare-vehicle">
+  <div class="header-compare">
+    <div class="title-header-compare">
+      <h3>CÔNG CỤ SO SÁNH XE</h3>
+    </div>
+    <div class="body-header-compare">
+      <select [(ngModel)]="dataSearch.brandId1"
+              (change)="onChangeBrand1($event)">
+        <option value=null
+                selected> Chọn hãng xe</option>
+        <option *ngFor="let item of listBrandCar1 ;"
+                [value]="item.brandId">
+          {{item.name}}
+        </option>
+      </select>
+
+      <select [(ngModel)]="dataSearch.carModelId1">
+        <option value = null
+                selected>Chọn dòng xe</option>
+        <option *ngFor="let item of listCarByBrand1 ;"
+                [value]="item.carModelId">
+          {{item.carName}}
+        </option>
+      </select>
+
+      <button class="btn-compare" (click)="getDataCompareVehicle()">
+        SO SÁNH
+      </button>
+
+      <select [(ngModel)]="dataSearch.brandId2"
+              (change)="onChangeBrand2($event)">
+        <option value=null
+                selected> Chọn hãng xe</option>
+        <option *ngFor="let item of listBrandCar2 ;"
+                [value]="item.brandId">
+          {{item.name}}
+        </option>
+      </select>
+
+      <select [(ngModel)]="dataSearch.carModelId2">
+        <option value = null
+                selected>Chọn dòng xe</option>
+        <option *ngFor="let item of listCarByBrand2 ;"
+                [value]="item.carModelId">
+          {{item.carName}}
+        </option>
+      </select>
+
+    </div>
+  </div>
+
+  <div class="content-compare" *ngIf="dataCompare">
+    <div class="group-image-car">
+
+    </div>
+    <div class="group-basic-param">
+      <div class="title-basic">
+        THÔNG SỐ CƠ BẢN
+      </div>
+      <div class="content-basic">
+        <div class="control-content">
+          <div class="title-control">
+            Giá bán
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.priceRange}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.pricerange}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Dài x Rộng x Cao (mm)
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.hww}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.hww}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Số chỗ ngồi
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.seat}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.seat}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Thương hiệu
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.brandname}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.brandname}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Tên xe
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.carDetailName}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.carDetailName}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Tên xe
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.carDetailName}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.carDetailName}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Loại xe
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.typeOfvehicle}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.typeOfvehicle}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Phân khúc xe
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.segment}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.segment}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Phân khúc xe
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.segment}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.segment}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Nguồn gốc
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.origin}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.origin}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Khoảng sáng gầm xe
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.groundClearance}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.groundClearance}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Bánh xe và lốp xe
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.wheelsAndTires}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.wheelsAndTires}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Động cơ
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.engine}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.engine}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Công suất động cơ
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.power}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.power}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Mo men xoắn
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.torque}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.torque}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Hộp số
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.transmission}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.transmission}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Hệ thống lái
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.driveSystem}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.driveSystem}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Hệ thống treo
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.suspensionSystem}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.suspensionSystem}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Phanh sau
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.rearBrake}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.rearBrake}}
+          </div>
+        </div>
+
+        <div class="control-content">
+          <div class="title-control">
+            Công nghệ phanh
+          </div>
+          <div class="data-control">
+            {{dataCompare.car1.brakeTechnology}}
+          </div>
+          <div class="data-control">
+            {{dataCompare.car2.brakeTechnology}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
