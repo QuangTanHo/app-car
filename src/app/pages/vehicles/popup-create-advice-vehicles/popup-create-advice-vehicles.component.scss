@@ -1,0 +1,73 @@
+.container-popup-advice {
+  position: relative;
+  padding: 20px;
+
+  .icon-close {
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #dd0000;
+    border: 1px solid;
+    border-radius: 15px;
+    top: 5px;
+    font-weight: 600;
+  }
+
+  .icon-close:hover {
+    background-color: #dd0000;
+    color: #ffffff;
+  }
+
+  .title-popup {
+    h3 {
+      text-align: center;
+      border-bottom: 2px solid #ddd;
+    }
+  }
+
+  .content-title {
+    font-size: medium;
+    color: #000000;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .control-input {
+
+    input,
+    select {
+      background-color: rgba(0, 0, 0, .03);
+      border-color: rgba(0, 0, 0, .09);
+      border-radius: 99px;
+      box-shadow: none;
+      color: currentColor !important;
+      border: 1px solid #ddd;
+      font-size: .97em;
+      height: 2.507em;
+      max-width: 100%;
+      padding: 0 .75em;
+      transition: color .3s, border .3s, background .3s, opacity .3s;
+      vertical-align: middle;
+      width: 100%;
+      outline: none;
+      margin-bottom: 10px;
+    }
+  }
+
+  .btn-send-advice {
+    height: 40px;
+    border: 1px solid;
+    border-radius: 99px;
+    background-color: #dd0000;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    width: 150px;
+  }
+
+  .btn-send-advice:hover {
+    color: #dd0000;
+    background-color: #ffffff
+  }
+}
